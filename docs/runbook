@@ -1,0 +1,50 @@
+FEATURES
+* upload --
+- drag and drop sends a post request [done]
+- only pdf and doc/docx supported [done]
+- file is uploaded into s3 [done]
+- list of files being uploaded shown on drop [done]
+- progress foreach file shown [done]
+- on upload complete. url of file shown [done]
+- clicking on the url opens a new tab with pdf/doc document embedded within [done]
+- key should not be filename. UUID as key for storing file [done]
+- any error during upload is reported back [done]
+- show meaningful filename after upload completion [done]
+- unit tests to be written
+[iter1 complete]
+
+* index --
+- upload complete publish the resume url to SNS topic - resume-upload-complete [done]
+- create endpoint to listen on SNS topic [done]
+- on receive of message, send index request to ES [done]
+- id of the document indexed should be UUID [done]
+- unit tests to be written
+[iter2 complete]
+
+* search --
+- In Find & View, create a search box and search icon/button
+- on clicking the search button, search request is sent to ES
+- list out found results on the Find & View page as a ranked list
+- list should show highlighted items from the document along with title
+- clicking of the list item, resume/document should open in google viewer in separate tab
+- page results. fetch more pattern. 10 results per fetch.
+- unit tests to be written
+[iter3 --]
+
+* dashboard --
+- show total number of resumes in the database
+
+OPERATIONS
+- setup monitoring (postivie and negative)
+
+TBD - To Fix
+- Secure requests to lib/s3, lib/es
+- logging framework [done]
+- config file with stage wise configs
+configs so far -- es_endpoint, es_index, s3_bucket, aws credentials, s3 endpoint
+- git repository setup
+- build and deploy
+- on the box, create other users than root. stop using root.
+- change ES gateway type to s3 from local
+- The problem of Duplicates (documents). Serious need to Dedupe.
+- unit tests
