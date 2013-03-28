@@ -1,0 +1,69 @@
+2013-03-26 17:28:03 - DEBUG --> SNS message received with key d705c988-6ad7-4b36-9c7f-1079ed88900e and url http://rdb-test-100.s3.amazonaws.com/d705c988-6ad7-4b36-9c7f-1079ed88900e.pdf. Submitting to index. 
+2013-03-26 17:28:25 - DEBUG --> SNS message received with key 329cfdda-249e-488c-9b39-6244a0599196 and url http://rdb-test-100.s3.amazonaws.com/329cfdda-249e-488c-9b39-6244a0599196.pdf. Submitting to index. 
+2013-03-26 17:28:54 - DEBUG --> SNS message received with key d705c988-6ad7-4b36-9c7f-1079ed88900e and url http://rdb-test-100.s3.amazonaws.com/d705c988-6ad7-4b36-9c7f-1079ed88900e.pdf. Submitting to index. 
+2013-03-26 17:28:55 - ERROR --> Testing error 
+2013-03-26 17:28:59 - DEBUG --> SNS message received with key 1293d8fd-617d-4aba-9fd9-ed905d563838 and url http://rdb-test-100.s3.amazonaws.com/1293d8fd-617d-4aba-9fd9-ed905d563838.pdf. Submitting to index. 
+2013-03-26 17:29:00 - ERROR --> Testing error 
+2013-03-26 17:29:04 - ERROR --> couldn't connect to host 
+2013-03-26 17:29:44 - DEBUG --> SNS message received with key d705c988-6ad7-4b36-9c7f-1079ed88900e and url http://rdb-test-100.s3.amazonaws.com/d705c988-6ad7-4b36-9c7f-1079ed88900e.pdf. Submitting to index. 
+2013-03-26 17:29:50 - DEBUG --> SNS message received with key 1293d8fd-617d-4aba-9fd9-ed905d563838 and url http://rdb-test-100.s3.amazonaws.com/1293d8fd-617d-4aba-9fd9-ed905d563838.pdf. Submitting to index. 
+2013-03-26 17:29:54 - ERROR --> couldn't connect to host 
+2013-03-26 17:30:23 - ERROR --> couldn't connect to host 
+2013-03-26 17:30:40 - DEBUG --> SNS message received with key 1293d8fd-617d-4aba-9fd9-ed905d563838 and url http://rdb-test-100.s3.amazonaws.com/1293d8fd-617d-4aba-9fd9-ed905d563838.pdf. Submitting to index. 
+2013-03-26 17:30:41 - DEBUG --> Successfully indexed. Response: true 
+2013-03-26 17:30:45 - ERROR --> couldn't connect to host 
+2013-03-26 17:31:07 - DEBUG --> SNS message received with key af0ecf6d-e980-45b6-b726-94fb2ab8777e and url http://rdb-test-100.s3.amazonaws.com/af0ecf6d-e980-45b6-b726-94fb2ab8777e.pdf. Submitting to index. 
+2013-03-26 17:31:08 - DEBUG --> Successfully indexed. Response: true 
+2013-03-26 17:31:13 - ERROR --> couldn't connect to host 
+2013-03-26 17:31:35 - ERROR --> couldn't connect to host 
+2013-03-26 17:32:04 - ERROR --> couldn't connect to host 
+2013-03-26 17:32:09 - ERROR --> couldn't connect to host 
+2013-03-26 17:32:55 - ERROR --> couldn't connect to host 
+2013-03-26 17:33:00 - ERROR --> couldn't connect to host 
+2013-03-26 17:43:14 - DEBUG --> SNS message received with key 7075da2b-a57d-41b6-a48b-4cec5ddbedf7 and url http://rdb-test-100.s3.amazonaws.com/7075da2b-a57d-41b6-a48b-4cec5ddbedf7.pdf. Submitting to index. 
+2013-03-26 17:43:15 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 17:43:15 - DEBUG --> ...Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 17:47:54 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 17:47:56 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:07:48 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:07:52 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:09:33 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:09:35 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:09:51 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:09:53 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:17:27 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:17:29 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:23:10 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:23:13 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:28:11 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:28:13 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:34:03 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:34:05 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 18:34:40 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 18:34:42 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 20:08:19 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 20:08:21 - DEBUG --> Indexing request sent to http://localhost:9200/rdb-test/candidate/ 
+2013-03-26 20:49:59 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 20:50:02 - DEBUG --> Successfully indexed.  
+2013-03-26 20:51:25 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 20:51:26 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ 
+2013-03-26 20:58:39 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 20:58:41 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ 
+2013-03-26 21:00:17 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 21:00:19 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ 
+2013-03-26 21:02:38 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 21:02:40 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ 
+2013-03-26 21:08:31 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 21:08:34 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ ... 
+2013-03-26 21:11:30 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 21:11:32 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ ... 
+2013-03-26 21:11:32 - DEBUG --> Successfully indexed.  
+2013-03-26 21:12:06 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 21:12:08 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ ... 
+2013-03-26 21:12:08 - DEBUG --> Successfully indexed.  
+2013-03-26 21:13:08 - DEBUG --> SNS message received with key 57a6b238-8ae6-4865-bfdc-3de8ff784f5b and url http://rdb-test-100.s3.amazonaws.com/57a6b238-8ae6-4865-bfdc-3de8ff784f5b.doc. Submitting to index. 
+2013-03-26 21:13:10 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ ... 
+2013-03-26 21:13:10 - DEBUG --> Successfully indexed.  
+2013-03-26 21:16:08 - DEBUG --> SNS message received with key 0c0d4260-1f7b-491f-8fc4-f14a17926a15 and url http://rdb-test-100.s3.amazonaws.com/0c0d4260-1f7b-491f-8fc4-f14a17926a15.pdf. Submitting to index. 
+2013-03-26 21:16:12 - DEBUG --> Request sent to elasticsearch @ http://54.251.251.101:9200/ ... 
+2013-03-26 21:16:12 - DEBUG --> Successfully indexed document with id = 0c0d4260-1f7b-491f-8fc4-f14a17926a15. 
