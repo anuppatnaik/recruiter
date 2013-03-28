@@ -42,7 +42,7 @@ TBD - To Fix
 - logging framework [done]
 - config file with stage wise configs
 configs so far -- es_endpoint, es_index, s3_bucket, aws credentials, s3 endpoint
-- git repository setup
+- git repository setup [done]
 - build and deploy
 - on the box, create other users than root. stop using root.
 - change ES gateway type to s3 from local
