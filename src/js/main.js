@@ -1,5 +1,5 @@
 //tracks the current page in view/visible
-var currPg = "pg-about";
+var currPg = "pg-home";
 
 //fires on creation of DOM. all element (img) may not have been loaded
 $(function () { 
@@ -27,10 +27,10 @@ $(function () {
 
 	//bind events	
 	//left menu click events to change view on click
-	$('ul.nav-list > li > a').click(function(){ 
+	$('ul.nav#top-menu > li > a').click(function(){ 
 		//function to switch view between pages
 		//remove highlighting of all links in nav
-		$('ul.nav-list > li').removeClass("active");
+		$('ul.nav > li').removeClass("active");
 		//add highlighting to the link clicked
 		$(this).parent().addClass("active");
 		//hide the old page
@@ -39,6 +39,10 @@ $(function () {
 		//show the clicked page
 		$('#' + currPg).show();
 	}); //end of switch view fn
+    $('#hide-search-hlp').click(function(){
+        $('#search-hlp').hide();
+        return false;
+    });
 
 }); //end of document ready
 
