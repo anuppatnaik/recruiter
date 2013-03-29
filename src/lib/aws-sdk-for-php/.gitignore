@@ -1,6 +1,5 @@
 .DS_Store
 Config
-config.inc.php
 Rakefile
 Makefile
 eclipse
