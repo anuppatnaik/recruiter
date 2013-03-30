@@ -7,7 +7,7 @@
                     <div class="span9">
                       <input type="text" name="query" id="search-box" style="width:580px;font-size:16px">
                       <span class="add-on" id="search-icon">
-                        <i class="icon-search"></i>
+                        <a href="#"><i class="icon-search"></i></a>
                       </span>
                     </div>
                   </div>

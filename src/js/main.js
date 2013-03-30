@@ -44,15 +44,50 @@ $(function () {
 		$('#' + currPg).show();
 	}); //end of switch view fn
 
-    //bind search click/carriage return events. TBD - to re-factor the 
-    //search method
+    //bind carriage return to search on search box
     $('#search-box').keypress(function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 13) {
+           search();
+           e.preventDefault();
+        }//end of if key 13    
+    });
+    //bind click of search icon to search method
+    $('#search-icon > a').click(function(){
+        search();
+        return false;
+    });
+
+}); //end of document ready
+
+getAllFiles = function() {
+
+//get all files    
+$.ajax({
+    // Uncomment the following to send cross-domain cookies:
+    //xhrFields: {withCredentials: true},
+    url: $('#fileupload').fileupload('option', 'url'),
+    dataType: 'json',
+    context: $('#fileupload')[0]
+    }).done(function (result) {
+	$(this).fileupload('option', 'done')
+    	.call(this, null, {result: result});
+   	});
+
+}
+
+//util function. TBD - place in a util file
+getGoogleViewerLink = function(url) {
+	var baseUrl = " http://docs.google.com/viewer";
+	return baseUrl + "?url=" + encodeURIComponent(url);
+}//end of getGoogleViewerLink
+
+search = function() {
+
             var queryStr = $('#search-box').val();
             //can convert into ORM style later. e.g. candidate.search
             var searchJSON = {
-               fields : ["title", "url", "key", "date", "keywords", "content-type"],
+               fields : ["filename", "title", "url", "key", "date", "keywords", "content-type"],
                query : {
                   term : {
                      _all : queryStr
@@ -79,8 +114,7 @@ $(function () {
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
-                        var msg = "";
-                        if(data['hits']['total']) {
+                            var msg = "";
                             if(tmpl) {
                                 var func = tmpl('template-search-results');
                                 msg = data['hits']['total'] + " person" +
@@ -100,41 +134,13 @@ $(function () {
                                 console.log('Error: Templating not available. Cannot paint results.');
                                 msg = "Something has gone wrong. Sorry!";
                             }
-                        }
-                        else 
-                            msg = "Oops, nothing found!";
-                        $("div#search-hlp > blockquote").html(msg);
+                            $("div#search-hlp > blockquote").html(msg);
                     },
                     error: function(request, status, error) {
                         //handle error better
                         console.log('Oops we are so sorry, something seems to have gone wrong');
                     }
                 });
-           e.preventDefault();
-        }//end of if key 13    
-    });
 
-}); //end of document ready
-
-getAllFiles = function() {
-
-//get all files    
-$.ajax({
-    // Uncomment the following to send cross-domain cookies:
-    //xhrFields: {withCredentials: true},
-    url: $('#fileupload').fileupload('option', 'url'),
-    dataType: 'json',
-    context: $('#fileupload')[0]
-    }).done(function (result) {
-	$(this).fileupload('option', 'done')
-    	.call(this, null, {result: result});
-   	});
-
-}
-
-//util function. TBD - place in a util file
-getGoogleViewerLink = function(url) {
-	var baseUrl = " http://docs.google.com/viewer";
-	return baseUrl + "?url=" + encodeURIComponent(url);
-}//end of getGoogleViewerLink
+} //end of search
 

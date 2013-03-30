@@ -1,5 +1,6 @@
 <!--  using templating to paint out search results -->
 <script id="template-search-results" type="text/x-tmpl">
+    {% if(o.candidates.length) { %}
     <table class="table table-condensed table-hover">
         <thead>
             <tr>
@@ -28,4 +29,5 @@
             {% }  %}
         </tbody>
     </table> 
+    {% }  %}
 </script>
