@@ -1,5 +1,9 @@
 //tracks the current page in view/visible
 var currPg = "pg-home";
+var o = {
+    //stores array of candidates found as a result of search
+    candidates : {},
+};
 
 //fires on creation of DOM. all element (img) may not have been loaded
 $(function () { 
@@ -39,9 +43,75 @@ $(function () {
 		//show the clicked page
 		$('#' + currPg).show();
 	}); //end of switch view fn
-    $('#hide-search-hlp').click(function(){
-        $('#search-hlp').hide();
-        return false;
+
+    //bind search click/carriage return events. TBD - to re-factor the 
+    //search method
+    $('#search-box').keypress(function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) {
+            var queryStr = $('#search-box').val();
+            //can convert into ORM style later. e.g. candidate.search
+            var searchJSON = {
+               fields : ["title", "url", "key", "date", "keywords", "content-type"],
+               query : {
+                  term : {
+                     _all : queryStr
+                  }
+               },
+               highlight : {
+                    pre_tags : ['** '],
+                    post_tags : [' **'],
+                    fields : {
+                        file : { term_vector : "with_positions_offsets", 
+                                fragment_size : 150 }
+                    }
+               }
+            };
+        // --- Not a good place to put constants
+        var ES_ENDPOINT = "http://54.251.251.101:9200/";
+        var ES_INDEX = "rdb-test/";
+        var ES_TYPE = "candidate/";
+
+         $.ajax({
+                    type: "POST",
+                    url: ES_ENDPOINT+ES_INDEX+ES_TYPE+"_search",
+                    data: JSON.stringify(searchJSON),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(data) {
+                        var msg = "";
+                        if(data['hits']['total']) {
+                            if(tmpl) {
+                                var func = tmpl('template-search-results');
+                                msg = data['hits']['total'] + " person" +
+                                ((parseInt(data['hits']['total']) === 1)? "" : "s") +
+                                " found in " + data['took'] + " milli seconds";
+                                //hold the search results
+                                o['candidates'] = data['hits']['hits'];
+                                var result = func({
+                                    candidates: o['candidates'],
+                                });
+                                //TBD - better error handling. results
+                                //var may not be in well formed HTML
+                                $('#search-results').html("");
+                                $('<div>' + result + '</div>').appendTo('#search-results');
+                            }
+                            else {
+                                console.log('Error: Templating not available. Cannot paint results.');
+                                msg = "Something has gone wrong. Sorry!";
+                            }
+                        }
+                        else 
+                            msg = "Oops, nothing found!";
+                        $("div#search-hlp > blockquote").html(msg);
+                    },
+                    error: function(request, status, error) {
+                        //handle error better
+                        console.log('Oops we are so sorry, something seems to have gone wrong');
+                    }
+                });
+           e.preventDefault();
+        }//end of if key 13    
     });
 
 }); //end of document ready
@@ -67,3 +137,4 @@ getGoogleViewerLink = function(url) {
 	var baseUrl = " http://docs.google.com/viewer";
 	return baseUrl + "?url=" + encodeURIComponent(url);
 }//end of getGoogleViewerLink
+

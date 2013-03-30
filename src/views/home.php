@@ -6,7 +6,7 @@
                   <div class="span11" style="padding-bottom:30px">
                     <strong>Mr. Recruiter</strong> will help you hire the best people around. 
                     Use the menu on top to do different things. And the best part, all this runs off the cloud. 
-                      Meaning, accessible by whole of your team from anywhere anytime. Have a lot of fun!
+                      Meaning, accessible by whole of your team from anywhere anytime. <storng>Have a lot of fun!</strong>
                   </div>
                   <div class="span3">
                     <div class="well">

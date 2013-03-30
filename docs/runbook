@@ -22,7 +22,7 @@ FEATURES
 [iter2 complete]
 
 * search --
-- In Find & View, create a search box and search icon/button
+- In Find & View, create a search box and search icon/button [done]
 - on clicking the search button, search request is sent to ES
 - list out found results on the Find & View page as a ranked list
 - list should show highlighted items from the document along with title

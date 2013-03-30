@@ -11,6 +11,7 @@
  $data = json_decode($sns_message_json->{'Message'});
  $docKey = $data->{'key'};
  $docUrl = $data->{'url'};
+ $docFName = $data->{'name'};
 
  if(Utils::isNullOrEmptyString($docKey) || 
  	Utils::isNullOrEmptyString($docUrl))
@@ -34,7 +35,8 @@
  $request_json = json_encode(array(
  		'file' => $encoded_content,
  		'url' => $docUrl,
- 		'key'=> $docKey
+ 		'key'=> $docKey,
+ 		'filename' => $docFName
  	));
  $esEndpoint = curl_init("{$ES_ENDPOINT}{$ES_INDEX}{$ES_TYPE}{$docKey}");
  curl_setopt_array($esEndpoint, array(

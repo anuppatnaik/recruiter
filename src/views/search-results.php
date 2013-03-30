@@ -1,41 +1,31 @@
+<!--  using templating to paint out search results -->
+<script id="template-search-results" type="text/x-tmpl">
     <table class="table table-condensed table-hover">
         <thead>
             <tr>
             <th class="span1"><input type="checkbox"></th>
-            <th class="span2"></th>
-            <th class="span2"></th>
-            <th class="span9"></th>
-            <th class="span2"></th>
+            <th class="span9">People Found</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-            <td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
-            <td><strong>John Doe</strong></td>
-            <td><span class="label pull-right">Notifications</span></td>
-            <td><strong>Message body goes here</strong></td>
-            <td><strong>11:23 PM</strong></td>
-            </tr>
-            <tr>
-            <td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
-            <td>John Doe</td>
-            <td><span class="label pull-right">Notifications</span></td>
-            <td>Message body goes here</td>
-            <td>Sept4</td>
-            </tr>
-            <tr>
-            <td><input type="checkbox"> <a href="#"><i class="icon-star"></i></a></td>
-            <td><strong>John Doe</strong></td>
-            <td><span class="label pull-right">Notifications</span></td>
-            <td><strong>Message body goes here</strong></td>
-            <td><strong>Sept3</strong></td>
-            </tr>
-            <tr>
-            <td><input type="checkbox"> <a href="#"><i class="icon-star"></i></a></td>
-            <td><strong>John Doe</strong></td>
-            <td><span class="label pull-right">Notifications</span></td>
-            <td><strong>Message body goes here</strong></td>
-            <td><strong>Sept3</strong></td>
-            </tr>
+            {% for (var i=0,candidate; candidate = o.candidates[i]; i++) { %}
+                  <tr>
+                  <td><input type="checkbox"></td>
+                  <td>
+                        <a href="{%= getGoogleViewerLink(candidate['fields']['url']) %}" target="_blank">
+                            {%= (candidate['fields']['filename']? candidate['fields']['filename'] : (candidate['fields']['file.title']? candidate['fields']['file.title'] : "No Name")) %}
+                        </a>
+                        <br>
+                        <div align="justify">
+                              <!-- TBD 2 things
+                                    1. Shows only first fragment
+                                    2. Does not highlight keywords found
+                              -->
+                              {%= candidate['highlight']['file'][0] %}
+                        </div>
+                  </td>
+                  </tr>
+            {% }  %}
         </tbody>
-    </table>
+    </table> 
+</script>
