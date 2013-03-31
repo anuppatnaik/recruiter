@@ -20,7 +20,7 @@
  	exit(0);
  }
     
- $log->logDebug("SNS message received with key {$docKey} and url {$docUrl}. Submitting to index.");
+ $log->logDebug("SNS message received with key {$docKey}, {$docFName} and url {$docUrl}. Submitting to index.");
 
  $content = file_get_contents($docUrl);
 
