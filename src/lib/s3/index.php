@@ -13,7 +13,7 @@
 error_reporting(E_ALL | E_STRICT);
 
 require('awssdk.php');
-$bucket = "rdb-test-100";
+$bucket = "rdb-100";
 $subFolder = "";
 
 header('Pragma: no-cache');

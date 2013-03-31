@@ -104,7 +104,7 @@ search = function() {
             };
         // --- Not a good place to put constants
         var ES_ENDPOINT = "http://54.251.251.101:9200/";
-        var ES_INDEX = "rdb-test/";
+        var ES_INDEX = "rdb/";
         var ES_TYPE = "candidate/";
 
          $.ajax({

@@ -4,7 +4,7 @@
  require_once('../php-commons/utils.php');
  
  $ES_ENDPOINT = "http://54.251.251.101:9200/";
- $ES_INDEX = "rdb-test/";
+ $ES_INDEX = "rdb/";
  $ES_TYPE = "candidate/";
 
  $sns_message_json = json_decode($HTTP_RAW_POST_DATA);
