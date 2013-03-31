@@ -22,7 +22,8 @@
                                     1. Shows only first fragment
                                     2. Does not highlight keywords found
                               -->
-                              {%= candidate['highlight']['file'][0] %}
+                              <!-- highlight has been found to be missing in some cases -->
+                              {%= ((candidate['highlight'] && candidate['highlight']['file'])? candidate['highlight']['file'][0] : "Sorry, unable to pull resume text.") %}
                         </div>
                   </td>
                   </tr>
