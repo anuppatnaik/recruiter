@@ -24,15 +24,25 @@ FEATURES
 * search --
 - In Find & View, create a search box and search icon/button [done]
 - on clicking the search button, search request is sent to ES [done]
-- list out found results on the Find & View page as a ranked list
-- list should show highlighted items from the document along with title
-- clicking of the list item, resume/document should open in google viewer in separate tab
+- list out found results on the Find & View page as a ranked list [done]
+- list should show highlighted items from the document along with title [done]
+- clicking of the list item, resume/document should open in google viewer in separate tab [done]
 - page results. fetch more pattern. 10 results per fetch.
 - unit tests to be written
 [iter3 --]
 
-* dashboard --
-- show total number of resumes in the database
+* iter4 -- 
+- add a updates box below the banners on homepage. updates will have new features added etc.
+- dashboard: show total number of resumes in the database [done]
+- ability to add free flowing notes, with time tags e.g. [4/1/2013] My notes go here
+- email a list of resumes indexed at the end of the day
+- ability to purge resume. in order to de-dupe
+- change the search from term query to boolean query (replicate aceqa codebase)
+- add linkedin url to field in index
+- given a linkedin a/c credentials. export all connection's resumes and add to DB. save linkedin url as well.
+- ability to star rate a candidate: 1, 2 or 3 star (representing High, Medium, or Low)
+- ability to add tags to resume
+- a way to mark (auto or manually) people as on-lookout. this field should be a filter criteria.
 
 OPERATIONS
 - setup monitoring (postivie and negative)

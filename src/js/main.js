@@ -1,3 +1,9 @@
+// --- Not a good place to put constants
+var ES_ENDPOINT = "http://54.251.251.101:9200/";
+var ES_INDEX = "rdb/";
+var ES_TYPE = "candidate/";
+var ES_CMD_STATUS = "_status";
+
 //tracks the current page in view/visible
 var currPg = "pg-home";
 var o = {
@@ -42,6 +48,9 @@ $(function () {
 		currPg = "pg-" + $(this).attr("href").substring(1);
 		//show the clicked page
 		$('#' + currPg).show();
+
+        if(currPg == 'pg-stats')
+            showStats();
 	}); //end of switch view fn
 
     //bind carriage return to search on search box
@@ -102,10 +111,6 @@ search = function() {
                     }
                }
             };
-        // --- Not a good place to put constants
-        var ES_ENDPOINT = "http://54.251.251.101:9200/";
-        var ES_INDEX = "rdb/";
-        var ES_TYPE = "candidate/";
 
          $.ajax({
                     type: "POST",
@@ -143,4 +148,57 @@ search = function() {
                 });
 
 } //end of search
+
+showStats = function() {
+    callES("GET", ES_CMD_STATUS, {}, showCount);
+}//end of showStats
+
+showCount = function(data){
+    var count = 0;
+    try {
+        count = data['indices'][ES_INDEX.slice(0, -1)]['docs']['num_docs'];
+    }catch(e){ count = '?'; $('#total-resume-count').html(count); return; }
+    animNum('total-resume-count', count);
+}
+
+//requestType = GET or PUT or POST
+//requestTrailingUrl = candidate/_search/
+//inputJSON = JSON input to the call to ES
+//onSuccess = name of the defined function that is to handle response
+callES = function(requestType, requestTrailingUrl, inputJSON, onSucccess) {
+         $.ajax({
+                    type: requestType,
+                    url: ES_ENDPOINT+ES_INDEX+requestTrailingUrl,
+                    data: JSON.stringify(inputJSON),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onSucccess,
+                    error: function(request, status, error) {
+                        //handle error better
+                        console.log('Oops we are so sorry, something seems to have gone wrong.');
+                        console.log('requestType = ' + requestType +
+                            '\nrequestTrailingUrl = ' + requestTrailingUrl +
+                            '\ninputJSON = ' + inputJSON +
+                            '\nonSucccess = ' + onSucccess);
+                    }
+                });
+} //end of call ES
+
+animNum = function (elementId, num) {
+    var clr = null;
+    var ele = $('#'+elementId);
+    var rand = 0;
+    loop();
+    function loop() {
+        clearTimeout(clr);
+        inloop();
+    }
+    function inloop() {
+        ele.html(rand += 1);
+        if (rand >= num) {
+            return;
+        }
+        clr = setTimeout(inloop, 30); //call 'inloop()' after 30 milliseconds
+    }
+}
 
